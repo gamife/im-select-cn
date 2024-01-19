@@ -1,8 +1,7 @@
 # im-select-cn
 # Introduce
 im-select 只能切换输入法，不能切换输入法状态，所以一直在找一个可以切换输入法状态的程序.  
-im-select-cn 是用autohotkey脚本写的, 中英文切换是默认通过模拟按下shift键来切换的.  
-使用的autohotkey版本是 v1.1.33.02
+im-select-cn 是用autohotkey脚本写的, 使用的autohotkey版本是 v1.1.33.02
 
 # Usage
 ## 可执行文件本身
@@ -40,3 +39,4 @@ im-select-cn 是用autohotkey脚本写的, 中英文切换是默认通过模拟�
 # 参考文档
 1. https://wyagd001.github.io/zh-cn/docs/KeyList.htm
 2. https://blog.csdn.net/fgh544568/article/details/126707672
+3. https://blog.51cto.com/u_15408625/6220547
