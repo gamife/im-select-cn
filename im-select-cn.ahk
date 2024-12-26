@@ -15,12 +15,12 @@ if (ArgCount > 1) {
 ; 当前输入法状态
 current_IME := IME_GET()
 
-; 由于vscode的vim插件好像会执行一次不带参数的情况, 总是弹出消息框, 所以注释掉
 ; 打印当前输入法状态
-; if (ArgCount == 0){
-;     MsgBox 命令行参数最多一个, 1为中文, 0为英文, 2为直接切换. 当前输入法状态为: %current_IME% 
-;     ExitApp, 0
-; }
+if (ArgCount == 0){
+    ; MsgBox 命令行参数最多一个, 1为中文, 0为英文, 2为直接切换. 当前输入法状态为: %current_IME% 
+    FileAppend, %current_IME%, *
+    ExitApp, 0
+}
 
 ; 命令行参数的第一个参数下标为1
 expect_IME := A_Args[1]
