@@ -22,7 +22,6 @@ current_IME := IME_GET()
 ; 打印当前输入法状态, 标准输出stdout
 if (ArgCount == 0){
     ; 可能使用windows的命令行看不到输出
-    ; 由 Gilmour6415 issue#1 提供的写法, 到时候把这注释删掉再pr
     FileAppend, %current_IME%, *
     ExitApp, 0
 }
