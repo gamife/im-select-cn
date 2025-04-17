@@ -36,6 +36,36 @@
 "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\\\im-select-cn.exe",
 "vim.autoSwitchInputMethod.switchIMCmd": "C:\\\\im-select-cn.exe {im}",
 ```
+## 在LazyVim💤中使用:
+在配置文件中添加:
+``` lua
+return {
+  "keaising/im-select.nvim",
+  config = function()
+    require("im_select").setup({
+      default_im_select = 0,
+      default_command = "D:\\im-select-cn\\im-select-cn.exe",
+
+      -- Restore the default input method state when the following events are triggered
+      set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },
+
+      -- Restore the previous used input method state when the following events
+      -- are triggered, if you don't want to restore previous used im in Insert mode,
+      -- e.g. deprecated `disable_auto_restore = 1`, just let it empty
+      -- as `set_previous_events = {}`
+      set_previous_events = { "InsertEnter" },
+
+      -- Show notification about how to install executable binary when binary missed
+      keep_quiet_on_no_binary = false,
+
+      -- Async run `default_command` to switch IM or not
+      async_switch_im = true,
+    })
+  end,
+}
+
+```
+
 
 ## 编译
 需要下载autohotkey 1.1 版本, 然后点击.ahk文件,右键点击 `compile script(GUI)` , 我选的是`v1.1.37.02 U64 Unicode 64-bit. bin`, 然后点击 `Convert`按钮就得到exe文件了.
